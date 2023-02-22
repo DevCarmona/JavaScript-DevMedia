@@ -44,3 +44,20 @@ console.log(numero++);
 console.log("Valor da variavel: " + numero);
 
     // Operadores relacionais
+// Operador || (ou)
+/*
+true || false = true
+false || true = true
+false || false = false
+*/
+// Operador && (e)
+/*
+true && true = true
+true && false = false
+false && false = false
+*/
+// Operador ! (nao)
+/*
+!false = true
+!true = false
+*/
