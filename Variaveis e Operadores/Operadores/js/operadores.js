@@ -8,6 +8,9 @@ console.log(resto2);
 var verificarSePar = 20 % 2 == 0;
 console.log(verificarSePar);
 
+    // Operadores Aritméticos
+    // + - / *
+
 // Exemplos de conversão de tipos
 console.log(5 + 20); // 25
 console.log(5 + true); // 6
