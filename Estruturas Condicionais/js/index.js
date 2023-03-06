@@ -49,6 +49,13 @@ const nome = 'Andre';
 // Retorna true se possuir e false caso contrário
 const nomeValido = nome.length > 0;
 nomeValido && console.log(nome); // Imprime o nome no console se for diferente de vazio
+    // Curto-cicuito
+const coiso = true || "Coisando"; // Usando || Se o primeiro valor for falso ele atribui a segunda variavel
+console.log(coiso);
+    // Curto-circuito
+let coisado = true && "verdadeiro"; // Usando && Sabendo que a condição é verdadeira ele imprime a segunda.
+console.log(coisado)
+let resultado = true && console.log("Aprovado");
     // Switch
 var produto = "Smartphone";
 switch(produto) // Expressão a ser validada
