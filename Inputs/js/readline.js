@@ -21,6 +21,6 @@ console.log("Calculadora de soma entre x e y: \n");
 let x = entradaDados.question("Informe o valor de x: ");
 let y = entradaDados.question("Informe o valor de y: ");
 
-let soma = Number(x) + Number(y); // Usando Number para transformar string em numero.
+let soma = Number(x) + Number(y); // Usando Number para transformar (soma)string em numero para conseguir calcular. 
 
 console.log("O resultado da sua soma entre " + x + " + " + y + " = " + soma);
