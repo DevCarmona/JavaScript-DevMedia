@@ -327,4 +327,33 @@ for ( let property in car)
         {
             console.log(property + ": " + car[property]);
         }
+    }
+console.log("\n");
+//  Estrutur de repetição for..in - Pizzaria
+let produtos = [
+    { id: 1, nome: "pizza", preco: 50 },
+    { id: 2, nome: "macarronada", preco: 25 },
+    { id: 3, nome: "lasanha", preco: 45 },
+    { id: 4, nome: "nhoque", preco: 30 }
+]
+let desconto = 5;
+
+for ( let cont = 0 ; cont < produtos.length ; cont++) //    Estrutura for
+{
+    let produto = produtos[cont];
+
+    for ( let prop in produto) //   Estrutura for.in
+    {
+        if ( prop == "preco")
+        {
+        let preco = prop;
+        let novoPreco = produto[preco] - desconto;
+        
+        console.log("preço atualizado: R$" + novoPreco.toFixed(2));
+        }   else
+            {
+                console.log(prop + ": " + produto[prop]);
+            }
+    }
+    console.log("\n");
 }
