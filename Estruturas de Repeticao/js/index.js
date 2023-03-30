@@ -338,11 +338,11 @@ let produtos = [
 ]
 let desconto = 5;
 
-for ( let cont = 0 ; cont < produtos.length ; cont++) //    Estrutura for
+for ( let cont = 0 ; cont < produtos.length ; cont++)//    Estrutura for
 {
     let produto = produtos[cont];
 
-    for ( let prop in produto) //   Estrutura for.in
+    for ( let prop in produto) //   Estrutura for..in
     {
         if ( prop == "preco")
         {
@@ -356,4 +356,138 @@ for ( let cont = 0 ; cont < produtos.length ; cont++) //    Estrutura for
             }
     }
     console.log("\n");
+}
+//  Estrutura de repetição for..of
+//  Não precisa de um contador para iterar os valores de um array.
+let emails_alunos = [
+    "danilo@email.com",
+    "jessica@email.com",
+    "luana@email.com",
+    "gustavo@email.com"
+];
+
+for ( let email of emails_alunos)
+{
+    console.log("Email: " + email);
+}
+//  Estrutura de repetição for..of - Clientes
+let clientes_array= [
+    {id: 1, nome: "Mônica", telefone: "99999-6565"},
+    {id: 2, nome: "Tânia", telefone: "99999-0778"},
+    {id: 3, nome: "Carlos", telefone: "99999-0551"}
+];
+
+for ( let client of clientes_array )
+{
+    let name = client.nome;
+    let tel = client.telefone;
+
+    console.log("Nome: " + name + " - Telefone: " + tel);
+}
+console.log("\n");
+//  Estrutura de repetição for..of - Desconto de produtos
+let produtos_array = [
+    { id: 1, nome: "mouse", preco: 50 },
+    { id: 2, nome: "teclado", preco: 90 },
+    { id: 3, nome: "monitor", preco: 350 },
+    { id: 4, nome: "nobreak", preco: 600 }
+];
+let percentual_desconto = .10;
+
+for ( let prod of produtos_array)
+{
+    let nom = prod.nome;
+    let pre = prod.preco;
+    
+    let valor_desconto = pre * percentual_desconto;
+    let preco_novo = pre - valor_desconto;
+
+    console.log("Produto: " + nom + " - Preço a vista com 10% desconto: R$" + preco_novo.toFixed(2) + " - Preço parcelado: R$" + pre.toFixed(2));
+}
+console.log("\n")
+//  Estrutura de repetição for..of - Soma das notas
+let notas_trimestrais = [ 9, 7, 6, 7 ];
+let total_notas = notas_trimestrais.length;
+let soma_notas = 0;
+
+for ( let nota of notas_trimestrais)
+{
+    soma_notas = nota + soma_notas;
+}
+let media_nota = soma_notas / total_notas;
+
+console.log("Média: " + media_nota);
+
+if ( media_nota >= 7 )
+{
+    console.log("Aprovado");
+
+} else if ( media_nota < 7 && media_nota >= 5 ) {
+    console.log("Recuperação");
+
+} else {
+    console.log("Reprovado");
+}
+console.log("\n");
+//  Repetição com while - tabuada do 3
+let numero_tab = 3
+let contador_tab = 0
+console.log("Tabuada do n° " + numero_tab);
+
+while ( contador_tab <= 10 )
+{
+    let res = numero_tab * contador_tab;
+    console.log(numero_tab + " x " + contador_tab + " = " + res);
+    contador_tab++
+}
+console.log("\n");
+//  Repetição com for - tabuada do 3
+let num_tab = 5
+console.log("Tabuada do n° " + num_tab);
+
+for ( let cont_tab = 0 ; cont_tab <= 10 ; cont_tab++)
+{
+    let res_tab = cont_tab * num_tab;
+
+    console.log(num_tab + " x " + cont_tab + " = " + res_tab);
+}
+console.log("\n");
+//  Repetição com do..while - Meses do Ano
+let contador_meses = 0;
+let meses_ano = [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ];
+
+do
+{
+    console.log(meses_ano[contador_meses]);
+    contador_meses++;
+} while ( contador_meses < meses_ano.length );
+console.log("\n");
+//  Repetição com for - Exercicio: Cursos idiomas
+let cursos_idiomas = [
+    { nome: "Inglês", preco: 2500, carga_horaria: 160 },
+    { nome: "Espanhol", preco: 1500, carga_horaria: 110 },
+    { nome: "Francês", preco: 3600, carga_horaria: 200 },
+    { nome: "Chinês", preco: 5500, carga_horaria: 400 },
+    { nome: "Alemão", preco: 3800, carga_horaria: 230}
+];
+
+for ( let curso of cursos_idiomas)
+{
+    let nome_curso = curso.nome;
+    let preco_curso = curso.preco;
+    let carga_curso = curso.carga_horaria;
+    let valor_aula = preco_curso / carga_curso; 
+
+    console.log ("Curso: " + nome_curso);
+    console.log("Valor do curso: R$ " + preco_curso.toFixed(2));
+    console.log("Carga horario do curso: " + carga_curso + " horas.");
+    //console.log("Valor cobrado por hora curso: R$ " + valor_aula.toFixed(2));
+
+    if ( valor_aula >= 15 )
+    {
+        console.log("Hora/Aula superior ou igual a R$ 15.00");
+    } else {
+        console.log("Hora/Aula inferior a R$ 15.00")
+    }
+    console.log("\n")
 }
