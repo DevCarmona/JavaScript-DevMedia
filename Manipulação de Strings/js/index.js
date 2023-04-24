@@ -188,7 +188,7 @@ let expressaoProibida = "passaporte falso";
 let comentario = "   venda de PASSAPORTE FALSO   ";
 
 comentario = comentario.trim();
-comentario = comentario.toLocaleLowerCase();
+comentario = comentario.toLowerCase();
 
 if ( comentario.indexOf(expressaoProibida) > -1 )
 {
@@ -277,4 +277,210 @@ for ( const chuva of chuvas_meteoros)
     console.log("Velocidade: ".padEnd(30, ".") + velocidade_formatada);
     console.log("\n");
 }
+console.log(" ")
+//
+
+let programador_0 = "FLÁVIA";
+let programador_3 = "flávia";
+
+if ( programador_0.toLowerCase() == programador_3.toLowerCase())
+{
+    console.log("iguais");
+} else {
+    console.log("diferentes");
+}
+//
+console.log(" ")
+//  for..in - percorrer objetos
+const aluno = { nome: "Andre", sobrenome: "Carmona"};
+const notas = { n1: 80, n2: 75, n3: 92, n4: 85};
+const info = {...aluno,...notas};
+
+for ( var dado in aluno ) // cada propriedade do aluno ele coloca dentro do dado. (nome e sobrenome)
+{
+    console.log(aluno[dado]); // Dessa forma imprime o valor da propriedade
+}
+console.log("for..in - percorrer objetos");
+for ( var dados in info )
+{
+    console.log(info[dados]);
+}
 console.log("")
+console.log("for..of - Percorrer coleções (cada uma das posições)");
+//  for..of - Percorrer coleções (cada uma das posições)
+let notes = [ 100, 80, 75, 30, 64, 47, 98, 81, 60 ];
+let aprovados = 0;
+let reprovados = 0;
+for ( var n of notes)
+{
+    n >= 70 ? aprovados++ : reprovados++;
+    console.log(n);
+}
+console.log("Qntd de alunos aprovados: " + aprovados);
+console.log("Qntd de alunos reprovados: " + reprovados);
+console.log("")
+console.log("for..in - percorrer objetos");
+//for..in - percorrer objetos
+let notes1 = [ 100, 80, 75, 30, 64, 47, 98, 81, 60 ];
+for ( var b in notes1)
+{
+    console.log(b);
+}
+console.log("")
+console.log(" Exercicicos")
+console.log("")
+// exercicios
+let cores = "verde azul branco amarelo preto";
+
+let array_cores = cores.split(" ");
+
+for ( const cor of array_cores ){
+
+    if( cor.length > 5 ){
+        console.log(" A cor " + cor + " tem mais que 5 caracteres" );
+    } else {
+        console.log(" A cor " + cor + " não tem mais que 5 caracteres" );
+    }
+}
+console.log("")
+//
+let atores = "Will Smith;Brad Pitt;Adam Sandler;Tom Cruise";
+
+let array_atores = atores.split(";");
+
+for (let ator of array_atores)
+{
+    console.log(ator);
+}
+console.log("")
+// length conta a partir do 1 e nao do zero.
+let frase21 = "Susana é legal";
+let frase12 = "a";
+
+frase21 = frase21.replace("legal","maneira");
+
+console.log(frase21.length);
+console.log(frase12.length);
+console.log("")
+//
+let label_aluno = "Aluno";
+let valor_aluno = "Edmilson";
+
+let label_grau = "Grau de escolaridade"
+let valor_grau = "Ensino Médio Completo";
+
+console.log(label_aluno.padStart(20, " ") + ": " + valor_aluno);
+
+console.log(label_grau.padStart(20, " ") + ": " + valor_grau);
+
+let label1 = "Email: ";
+let email1 = "contato@email.com";
+
+console.log( label1.padEnd() + email1);
+//
+let paises_string1 = "Brasil Espanha Canadá Irlanda Suíça";
+
+let paises_array1 = paises_string1.split(" ")
+
+
+console.log(paises_array1); // (5) ["Brasil", "Espanha", "Canadá", "Irlanda", "Suíça"]
+console.log("")
+//
+let nomes = "Mateus Ana Lúcia Otávio";
+console.log(nomes.substr(0,6));
+console.log(nomes.substr(11,5));
+console.log("")
+//
+let nome11 = "Ricardo Rangel Menezes";
+let array1 = nome11.split(" "); 
+let primeiro_nome11 = array1[0];
+let primeiro_nome_formatado = primeiro_nome11.toUpperCase();
+
+console.log(primeiro_nome_formatado);
+console.log("")
+//
+let frase11 = "Estou aprendendo JavaScript na DevMedia";
+let resultado11 = frase11.substr(17, 10);
+
+console.log(resultado11);
+console.log("")
+//
+let siglas = "PR-RJ-SP-AM-MG-TO-DF";
+
+let array_siglas = siglas.split("-");
+
+console.log(array_siglas[4]);
+console.log("")
+//
+let frase122 = "O Brasil é um país maravilhoso!";
+
+let resultado122 = frase122.indexOf("Brasil");
+
+console.log(resultado122);
+console.log("")
+//
+let cores1 = "verde azul branco amarelo preto";
+
+let array_cores11 = cores1.split(" ");
+
+for ( const cor1 of array_cores11 ){
+
+    if( cor1.length > 5 ){
+        console.log(" A cor " + cor1 + " tem mais que 5 caracteres" );
+    } else {
+        console.log(" A cor " + cor1 + " não tem mais que 5 caracteres" );
+    }
+
+}
+console.log("")
+//
+let 
+cidades
+ = "Manaus-Salvador-Santos-Curitiba-Recife";
+
+let array_cidades = cidades.split("-");
+
+console.log(array_cidades[1]);
+console.log("")
+//
+let label_nome12 = "Nome:";
+let valor_nome12 = "Jorge Luiz";
+
+let label_profissao12 = "Profissão:";
+let valor_profissao12 = "Professor";
+
+let label_endereco12 = "Endereço:";
+let valor_endereco12 = "Rua Cruzeiro do Sul";
+
+console.log( label_nome12.padEnd(25, '.') + valor_nome12);
+console.log(label_profissao12.padEnd(25, '.') + valor_profissao12 );
+console.log(label_endereco12.padEnd(25, '.') + valor_endereco12 );
+console.log("")
+//
+let 
+idiomas
+ = "português,inglês,francês,espanhol";
+
+let array_idiomas = idiomas.
+split(",")
+;
+
+for
+( const idioma 
+of
+ array_idiomas )
+{
+   
+console.log
+("Idioma: " + idioma);
+}
+console.log("")
+//
+let programador_122 = "FLÁVIA";
+let programador_222 = "flávia";
+
+if ( programador_122.toLowerCase() == programador_222 ){
+    console.log("iguais");
+} else {
+    console.log("diferentes");
+}
