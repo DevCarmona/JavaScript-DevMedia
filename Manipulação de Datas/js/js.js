@@ -820,11 +820,3 @@ const difeHora = hoj.getTimezoneOffset() / 60;
 
 console.log('Diferença de horário: ' + difeHora + ' horas');
 console.log("")
-
-// Crie um código para imprimir os dias consecutivos que o usuário acertou um exercício. Em cada iteração do loop adicione um dia à data armazenada em primeiroAcerto. Utilize a variável dia para isso.
-
-const totalAcertos = 4;
-const primeiroAcerto = new Date('2020/10/05');
-
-let idx = 0;
-
