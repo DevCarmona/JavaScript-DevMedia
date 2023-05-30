@@ -52,7 +52,7 @@ let statusaluno2 = calcula_media(4, 7);
 console.log(statusaluno2);
 console.log("")
 
-// Funções sem parâmetro
+// FUNÇÕES SEM PARÂMETRO
 console.log("!Funções sem parâmetro!");
 console.log("")
 //  Parametro é um valor que uma função recebe para usar no seu bloco de código.
@@ -70,10 +70,11 @@ console.log(texto_versao);
 console.log(txt_versao);
 console.log("")
 
-//  Funções com parâmetro
+//  FUNÇÕES COM PARÂMETRO
 console.log("!Funções com parâmetro!")
 console.log("")
 //  Funções com parâmetro recebem valores para serem usados em seus blocos de cód. EX: function retornaAluno( a1, a2 ) "Entre os parênteses, temos 2 valores, significa dizer q se trata de uma função com parâmetro".
+//  O uso de funções com parâmetro nos ajuda a reaproveitar um bloco de cód que recebe valores para usá-los em suas tarefas.
 function retornaAluno ( a1, a2 ) {
     let md = (a1 + a2) / 2; // 2 parametros usaos para o calc da média.
     let stats; // Variável que vai guardar o status do aluno.
@@ -90,3 +91,64 @@ console.log("Aluno 1: " + statsAluno1);
 
 let statsAluno2 = retornaAluno(4, 7);
 console.log("Aluno 2: " + statsAluno2);
+
+a1 = 8;
+a2 = 7;
+
+let stats1 = retornaAluno(a1, a2); // Pag do Aluno
+console.log("Status: " + stats1);
+
+let stats2 = retornaAluno(a1, a2); // Pag do Professor
+console.log("Status do aluno: " + stats2);
+console.log("")
+
+//  ARROW FUNCTION
+console.log("!Arrow Function!");
+console.log("")
+//  Arrow Function são funções escritas de forma diferente das funções tradicionais. Elas podem receberparâmetros ou não.
+function retornaMedia ( n1, n2 ) { // Função tradicional.
+    let media = (n1 + n2) / 2;
+    return media;
+}
+let medAluno = retornaMedia(8, 9);
+console.log("A média do aluno com função tradicional: " + medAluno);
+
+const retorna_Media = (n1, n2) => (n1 + n2) / 2; // Arrow Function com 1 linha de cód.
+
+let media_aluno = retorna_Media(9, 8);
+console.log("A média do aluno com Arrow Function: " + media_aluno);
+console.log("")
+
+//  ARQUITETURA DO PROJETO
+console.log("!Arquitetura do Projeto! Coleção Signos")
+console.log("")
+//  Criando a aplicação em camadas de complexibilidade
+let colecao_signos = [
+    {"Nome": "Aquário", "DataInicio": "01-20","DataFim":"02-18"},
+    {"Nome": "Peixes", "DataInicio": "02-19","DataFim":"03-20"},
+    {"Nome": "Áries", "DataInicio": "03-21","DataFim":"04-19"},
+    {"Nome": "Touro", "DataInicio": "04-20","DataFim":"05-20"},
+    {"Nome": "Gêmeos", "DataInicio": "05-21","DataFim":"06-21"},
+    {"Nome": "Câncer", "DataInicio": "06-22","DataFim":"07-23"},
+    {"Nome": "Leão", "DataInicio": "07-24","DataFim":"08-22"},
+    {"Nome": "Virgem", "DataInicio": "08-23","DataFim":"09-22"},
+    {"Nome": "Libra", "DataInicio": "09-23","DataFim":"10-22"},
+    {"Nome": "Escorpião", "DataInicio": "10-23","DataFim":"11-21"},
+    {"Nome": "Sagitário", "DataInicio": "11-22","DataFim":"12-21"},
+    {"Nome": "Capricórnio", "DataInicio": "12-22","DataFim":"01-19"}
+];
+
+const retorna_signo = ( signos, data ) => {    
+    let ano = data.getFullYear();
+
+    let data_inicio_signo = new Date( ano + "-" + signos[0]["DataInicio"] + " 00:00:00");
+    let data_fim_signo = new Date(ano + "-" + signos[0]["DataFim"] + " 23:59:59");
+
+    if ( data >= data_inicio_signo && data <= data_fim_signo ) {
+        return signos[0].Nome; // Outra maneira: return signos[0]["Nome"]
+    }
+}
+let data_app = new Date("2020-02-07 00:00:00");
+
+const nome_signo = retorna_signo(colecao_signos, data_app);
+console.log("O signo do dia é: " + nome_signo);
